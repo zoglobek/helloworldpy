@@ -21,6 +21,9 @@ jobs:
       - name: pwd
         run: pwd
 
+      - name: my ip
+        run: curl ifconfig.me
+
       - name: install pip
         run: sudo apt-get install python3-pip
 
