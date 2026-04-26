@@ -23,7 +23,8 @@ jobs:
 
       - name: install pip
         run: sudo apt-get install python3-pip
-      -name: install dependencies
+
+      - name: install dependencies
         run: pip3 install -r tests/requirements.txt
 
       - name: run test
