@@ -1,19 +1,26 @@
 name: worker
-  on:
-    workflow_dispatch:
 
-  branches: [ main ]
-  jobs:
-    build:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-        - uses: actions/checkout@v5
-        - name: git clone
-          run: git clone https://github.com/zoglobek/tests.git
-        - name: check files
-          run: ls -la tests
-        - name: pwd
-          run: pwd
-        - name: run test
-          run: tests/helloworld.py
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: git clone
+        run: git clone https://github.com/zoglobek/tests.git
+
+      - name: check files
+        run: ls -la tests
+
+      - name: pwd
+        run: pwd
+
+      - name: run test
+        run: python3 tests/helloworld.py
