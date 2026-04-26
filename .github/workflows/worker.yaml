@@ -17,4 +17,3 @@ name: worker
           run: pwd
         - name: run test
           run: tests/helloworld.py
-  
